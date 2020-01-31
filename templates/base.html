@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!--브라우저 탭에 보이는 이름을 결정하는 title 태그. 내용을 껴넣을 수 있게 만듦-->
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+          crossorigin="anonymous">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+<!-- Header design 을 정의합니다-->
+<div class="container">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Djang Bookmark</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+        </ul>
+
+        </div>
+    </nav>
+    <p></p>
+    <div class="row">
+        <div class="col">
+          <!--템플릿 확장은 block 을 기준으로 동작한다. 기준 템플릿에는 다른 템플릿에서 껴넣을 공간을
+           block 태그를 사용해 만들어두고 하위 템플릿에선 이 블록에 껴넣을 내용을 결정하여 내용을 채운다.-->
+            {% block content %}
+
+            {% endblock %}
+
+
+            {% block pagination %}
+            {% endblock %}
+        </div>
+    </div>
+</div>

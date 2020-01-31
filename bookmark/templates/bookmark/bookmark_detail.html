@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block title %}Detail{% endblock %}
+
+{% block content %}
+<!--DetailView 가 object 변수를 통해 북마크의 값을 전달해 하나씩 출력한다.
+북마크 하나의 정보만 출력한다.-->
+{{object.site_name}}<br/>
+{{object.url}}
+{% endblock %}
